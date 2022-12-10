@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="WpfApp2.IPBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp2" xmlns:svgc1="http://sharpvectors.codeplex.com/svgc/"
+             mc:Ignorable="d" 
+             x:Name="Ipbox"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <Border Name="IpBox" Height="{Binding Borderheight,ElementName=Ipbox}" Width="{Binding Borderwidth, ElementName=Ipbox , Mode=TwoWay}" BorderBrush="{Binding Bordercolor ,ElementName=Ipbox}" BorderThickness="1" Background="White">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="3" TextChanged="T1_TextChanged" Height="Auto" Width="{Binding InnerTBwidth ,ElementName=Ipbox}"  Background="Transparent" BorderThickness="0 0 0 0"  FontSize="{Binding font, ElementName=Ipbox}" Name="T1" KeyDown="Text1" KeyUp="Text1D"></TextBox>
+                    <TextBlock Text="." Height="{Binding Borderheight,ElementName=Ipbox}" Width="Auto" FontWeight="Bold"/>
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  MaxLength="3" TextChanged="T2_TextChanged" Height="Auto" Width="{Binding InnerTBwidth ,ElementName=Ipbox}" Background="Transparent" BorderThickness="0 0 0 0" FontSize="{Binding font, ElementName=Ipbox}" Name="T2" KeyDown="Text2" KeyUp="Text2D"></TextBox>
+                    <TextBlock Text="." Height="{Binding Borderheight,ElementName=Ipbox}"  Width="Auto" FontWeight="Bold"/>
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  MaxLength="3" TextChanged="T3_TextChanged" Height="Auto" Width="{Binding InnerTBwidth ,ElementName=Ipbox}" Background="Transparent" BorderThickness="0 0 0 0"  FontSize="{Binding font, ElementName=Ipbox}" Name="T3" KeyDown="Text3" KeyUp="Text3D"></TextBox>
+                    <TextBlock Text="." Height="{Binding Borderheight,ElementName=Ipbox}"  Width="Auto" FontWeight="Bold"/>
+                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="3" TextChanged="T4_TextChanged" Height="Auto" Width="{Binding InnerTBwidth ,ElementName=Ipbox}" Background="Transparent" BorderThickness="0 0 0 0"  FontSize="{Binding font, ElementName=Ipbox}" Name="T4" KeyUp="Text4"></TextBox>
+                </StackPanel>
+            </Border>
+            <Button x:Name="btn_localhost" Margin="2 0 0 0" Click="Localhostbtnclick" Width="{Binding Borderheight,ElementName=Ipbox}" Height="{Binding Borderheight,ElementName=Ipbox}" ToolTip="Local Host" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Visibility="Visible" Padding="0" >
+                <Button.Content>
+                    <UserControl xmlns:svgc="http://sharpvectors.codeplex.com/svgc">
+                        <svgc1:SvgViewbox Source="C:\Users\i2V\source\repos\WpfApp2\WpfApp2\image\dark-ip-local-host.svg"/>
+                    </UserControl>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
